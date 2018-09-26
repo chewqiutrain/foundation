@@ -33,5 +33,28 @@ def test():
 	dag1 = DAG1()
 	print(dag1)
 
-test()
+# test()
+
+def ctci4_1():
+	def search(s, t):
+		if s.visited:
+			return False 
+
+		if s is None:
+			return False 
+
+		if s == t:
+			return True 
+
+		result = False 
+		for neighbour in G.adj(s):
+			result = result or search(neighbour, t)
+
+	G = digraph1()
+	assert(search(0,2)), "Error: path from 0 to 2 does not exist"
+	assert(not search(0, 7)), "Error: Path from 0 to 7 should NOT exist"
+
+
+ctci4_1()
+
 
